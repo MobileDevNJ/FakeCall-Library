@@ -63,6 +63,7 @@
 		B52029A814736D860038BD2B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B52029A714736D860038BD2B /* libz.dylib */; };
 		B52029AA14736D970038BD2B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52029A914736D970038BD2B /* CFNetwork.framework */; };
 		B52029AC14736DA30038BD2B /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B52029AB14736DA30038BD2B /* libxml2.dylib */; };
+		B590B61514B0D51700EB8EC6 /* FCUnitTestMock.m in Sources */ = {isa = PBXBuildFile; fileRef = B590B61414B0D51700EB8EC6 /* FCUnitTestMock.m */; };
 		B5B0EB1C149E1B6A00617472 /* CallAnotherNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B0EB1A149E1B6A00617472 /* CallAnotherNumber.m */; };
 		B5B0EB20149E1BF600617472 /* CallAnotherNumber.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5B0EB1F149E1BF600617472 /* CallAnotherNumber.xib */; };
 		B5C47E331475E25500070DBD /* FCLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DACEB114748ACA0027C7DC /* FCLibrary.m */; };
@@ -191,6 +192,8 @@
 		B52029A714736D860038BD2B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		B52029A914736D970038BD2B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B52029AB14736DA30038BD2B /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		B590B61314B0D51700EB8EC6 /* FCUnitTestMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCUnitTestMock.h; sourceTree = "<group>"; };
+		B590B61414B0D51700EB8EC6 /* FCUnitTestMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCUnitTestMock.m; sourceTree = "<group>"; };
 		B5B0EB19149E1B6A00617472 /* CallAnotherNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallAnotherNumber.h; sourceTree = "<group>"; };
 		B5B0EB1A149E1B6A00617472 /* CallAnotherNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallAnotherNumber.m; sourceTree = "<group>"; };
 		B5B0EB1F149E1BF600617472 /* CallAnotherNumber.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CallAnotherNumber.xib; sourceTree = "<group>"; };
@@ -249,6 +252,8 @@
 		B52028B114736BE20038BD2B = {
 			isa = PBXGroup;
 			children = (
+				B590B61314B0D51700EB8EC6 /* FCUnitTestMock.h */,
+				B590B61414B0D51700EB8EC6 /* FCUnitTestMock.m */,
 				B5C47E361475E66900070DBD /* RegisterViewController.h */,
 				B5C47E371475E66900070DBD /* RegisterViewController.m */,
 				B5C47E381475E66900070DBD /* RegisterViewController.xib */,
@@ -687,6 +692,7 @@
 				B5CE50B914982B0700F5BC2F /* PasswordViewController.m in Sources */,
 				B5CE50BF149830C400F5BC2F /* ListViewController.m in Sources */,
 				B5B0EB1C149E1B6A00617472 /* CallAnotherNumber.m in Sources */,
+				B590B61514B0D51700EB8EC6 /* FCUnitTestMock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

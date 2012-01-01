@@ -11,6 +11,8 @@
 #import "ASIFormDataRequest.h"
 #import "SBJsonParser.h"
 
+#define debugMode TRUE
+
 static FCLibrary *sharedSingleton = nil;
 
 @implementation FCLibrary
@@ -73,7 +75,8 @@ static FCLibrary *sharedSingleton = nil;
     NSError *error = [request error];
     if (!error) {
         NSString *response = [request responseString];
-        NSLog (@"%@", response);
+        
+        if (debugMode) NSLog (@"%@", response);
         
         SBJsonParser *parser = [[SBJsonParser alloc] init];
         dataDictionary = [parser objectWithString:response];
@@ -121,7 +124,7 @@ static FCLibrary *sharedSingleton = nil;
                passwordRequired:YES];
 }
 
-- (NSDictionary*)authorizeThisNumber:(NSString*)number forMyAccount:(NSString*)primaryNumber
+- (NSDictionary*)authorizeThisNumber:(NSString*)primaryNumber forMyAccount:(NSString*)number
 {
     
     // Authorize another caller to call your account

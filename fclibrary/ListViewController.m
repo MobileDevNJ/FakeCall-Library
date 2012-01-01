@@ -57,8 +57,7 @@
     // 3. Remove authorized number
     // 4. Dial authorized number
     
-    NSDictionary *accountDetails = [[NSDictionary alloc] init];
-    accountDetails = [[NSUserDefaults standardUserDefaults] dictionaryForKey:@"accountDetails"];
+    NSDictionary *accountDetails = [[NSUserDefaults standardUserDefaults] dictionaryForKey:@"accountDetails"];
     
     fakeCall = [[FCLibrary alloc] init];
     
@@ -69,26 +68,23 @@
     [button release];
     
     // get list of authorized numbers
-    NSDictionary *dataDictionary = [[NSDictionary alloc] init ];
-    dataDictionary = [fakeCall listAuthorizedNumbers:[accountDetails objectForKey:@"account"]];
+    NSDictionary *dataDictionary = [fakeCall listAuthorizedNumbers:[accountDetails objectForKey:@"account"]];
     listArray = [[dataDictionary objectForKey:@"list"] retain];
     
-    [accountDetails release];
-    [dataDictionary release];
 }
 
 
 - (void)action:(id)sender
 {
-    
-    NSDictionary *accountDetails = [[NSDictionary alloc] init];
-    accountDetails = [[NSUserDefaults standardUserDefaults] dictionaryForKey:@"accountDetails"];
-    
-    NSDictionary *dataDictionary = [[NSDictionary alloc] init];
-    dataDictionary = [fakeCall authorizeThisNumber:[myNumber text] forMyAccount:[accountDetails objectForKey:@"account"]];
-    
-    [accountDetails release];
-    [dataDictionary release];
+    // list authorized Numbers
+    // {"list":["5555558899","5556667777"],"message":"call authorizations"}
+    NSDictionary *accountDetails = [[NSUserDefaults standardUserDefaults] dictionaryForKey:@"accountDetails"];
+    NSDictionary *dataDictionary = [fakeCall authorizeThisNumber:[myNumber text] forMyAccount:[accountDetails objectForKey:@"account"]];
+    if ([[dataDictionary objectForKey:@"message"] isEqualToString:@"call authorizations"]) {
+        NSLog(@"Success");
+    } else {
+        NSLog(@"Failed to initiate call");
+    }
     
     [self.navigationController popViewControllerAnimated:YES];
     

@@ -109,8 +109,7 @@
 
 - (IBAction)removeNumberAction:(id)sender {
     
-    NSDictionary *dataDictionary = [[NSDictionary alloc] init];
-    dataDictionary = [fakeCall removeAccount:[self getLabelWithString:100]];
+    NSDictionary *dataDictionary = [fakeCall removeAccount:[self getLabelWithString:100]];
     
     // isValid - {"message":"Account 1234567890 removed."}
     if ([[dataDictionary objectForKey:@"message"] isEqualToString:[NSString stringWithFormat:@"Account %@ removed.",[self getLabelWithString:100]]]) {
@@ -125,9 +124,7 @@
     } else {
         // error
         [self updateLabelWithString:@"Error Removing Number!" forTag:101];
-    }  
-    [dataDictionary release];
-    
+    }      
 }
 
 - (IBAction)changePasswordAction:(id)sender {
@@ -163,13 +160,18 @@
 - (IBAction)call:(id)sender
 {
     // call 
-    NSDictionary *dataDictionary = [[NSDictionary alloc] init];
-    dataDictionary = [fakeCall call:[self getLabelWithString:100]];
+    NSDictionary *dataDictionary = [fakeCall call:[self getLabelWithString:100]];
     
+    // {"timelimit":"now","caller":"steve","precision":"0s", \
+    "message":"I'm calling 1234567890 right now!"}
+    
+    if ([[dataDictionary objectForKey:@"timelimit"] isEqualToString:@"now"]) {
+        NSLog(@"Success");
+    } else {
+        NSLog(@"Failed to initiate call");
+    }
     // isValid
-    
-    [dataDictionary release];
- }
+}
 
 - (IBAction)callAnotherNumber:(id)sender
 {

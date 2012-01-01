@@ -13,6 +13,8 @@
 {
 @private
     FCLibrary    *fc;
+    NSString *defaultPassword;
+    NSString *defaultPhoneAcct;
     
 }
 

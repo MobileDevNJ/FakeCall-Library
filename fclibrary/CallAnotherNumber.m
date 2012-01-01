@@ -72,26 +72,13 @@
 
 - (void)action:(id)sender
 {
-    
-    NSDictionary *accountDetails = [[NSDictionary alloc] init];
-    accountDetails = [[NSUserDefaults standardUserDefaults] dictionaryForKey:@"accountDetails"];
-    
-    NSDictionary *dataDictionary = [[NSDictionary alloc] init];
-    dataDictionary = [fakeCall call:[myNumber text]];
-    
-    // check error message -> {"message":"you are not authorized on 9087910535"}
-    
-    [accountDetails release];
-    [dataDictionary release];
-    
+    NSDictionary *dataDictionary = [fakeCall call:[myNumber text]];    
+    // check error message (example) -> {"message":"you are not authorized on 9087910535"}
     if ([[dataDictionary objectForKey:@"message"] isEqualToString:[NSString stringWithFormat:@"you are not authorized on %@", [myNumber text]]]) {
         [self showAlert];
     } else {
         [self.navigationController popViewControllerAnimated:YES];
     }
-    [accountDetails release];
-    [dataDictionary release];
-    
 }
 
 - (void)viewDidUnload
